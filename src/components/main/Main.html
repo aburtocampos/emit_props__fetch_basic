@@ -1,0 +1,25 @@
+   <div class="container">
+    <div v-if="cargando">
+        <Loading  />
+    </div>
+    <div v-else>
+      <h2>Mis Post favorito es: <span class="text-danger">{{myFav}}</span></h2>
+
+      <div class="d-flex justify-content-end">
+       <Pagination
+         :currentPage="currentPage"
+         :totalPages="totalPages"
+         :start="start"
+        :fin="fin"
+          @previous="previous"
+          @next="next"
+          />
+      </div>
+      
+      <Submain v-for="item in paginatedItems" :key="item.id" :id="item.id" :title="item.title" :body="item.body" 
+        :changeFav="changeFav"
+         class="mb-2" />
+    </div>
+    
+
+   </div>
