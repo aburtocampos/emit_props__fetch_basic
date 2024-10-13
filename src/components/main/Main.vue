@@ -21,9 +21,9 @@ const loadPosts = async () => {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts")
     postfromAPI.value = await response.json()
-    setTimeout(()=>{
+   // setTimeout(()=>{
       cargando.value = false
-    },2000)
+   // },2000)
     
   } catch (error) {
     console.error(error)
